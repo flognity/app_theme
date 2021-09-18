@@ -5,14 +5,6 @@ import './material_color_generator/material_color_generator.dart';
  * Color palette
  * ********************** */
 
-Color lightBackground = Color(0xFFf6f9fb);
-Color lightBackgroundVariant = Color(0xFFf2faff);
-Color lightPrimary = Color(0xFF007edf);
-Color lightPrimaryVariant = Color(0xFF0894ff);
-Color lightSecondary = Color(0xFF0894ff);
-Color lightSecondaryVariant = Color(0xff08ff14);
-Color lightContrast = Color(0xFF152534);
-
 class _Colors {
   ///Private color palette for the light and dark theme
   static final MaterialColor _backgroundSwatch =
