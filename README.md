@@ -14,8 +14,8 @@ Simply include the ThemeData in your MaterialApp Constructor call:
 AppTheme appTheme = AppTheme();
 
 MaterialApp(
-      theme: Globals.appTheme.getTheme(isDarkTheme: false),
-      darkTheme: Globals.appTheme.getTheme(isDarkTheme: true),
+      theme: appTheme.getTheme(isDarkTheme: false),
+      darkTheme: appTheme.getTheme(isDarkTheme: true),
       //...
     );
 ```
