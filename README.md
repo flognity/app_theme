@@ -8,8 +8,7 @@ Just navigate to your `lib` directory and add the submodule where you would like
 cd lib
 cd util
 git submodule add https://github.com/flognity/app_theme.git
-git submodule init
-git submodule update
+git submodule update --init --recursive
 ```
 Simply include the ThemeData in your MaterialApp Constructor call:
 ```
