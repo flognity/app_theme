@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import './material_color_generator/material_color_generator.dart';
 
 /* **********************
@@ -62,6 +63,10 @@ class _Colors {
 class AppTheme {
   final _Colors colors = _Colors();
 
+  TextStyle _generalTextStyle(bool isDarkTheme) => TextStyle(
+        color: colors.contrast(isDarkTheme),
+      );
+
   TextTheme _generalTextTheme(bool isDarkTheme) => TextTheme(
         headline1: TextStyle(),
         headline2: TextStyle(),
@@ -113,14 +118,16 @@ class AppTheme {
       primaryColor: colors.primary(isDarkTheme),
       primaryColorDark: colors.primary(isDarkTheme),
       primaryColorLight: colors.primary(isDarkTheme),
-      accentColor: colors.secondary(isDarkTheme),
       toggleableActiveColor: colors.secondary(isDarkTheme),
       //app background
       canvasColor: colors.background(isDarkTheme),
       //AppBar theme
+
       appBarTheme: AppBarTheme(
         color: colors.backgroundVariant(isDarkTheme),
-        textTheme: _generalTextTheme(isDarkTheme),
+        toolbarTextStyle: _generalTextStyle(isDarkTheme),
+        titleTextStyle: _generalTextStyle(isDarkTheme),
+        foregroundColor: colors.contrast(isDarkTheme),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         unselectedItemColor: colors.contrast(isDarkTheme),
@@ -135,7 +142,6 @@ class AppTheme {
       //general text theme
       textTheme: _generalTextTheme(isDarkTheme),
       primaryTextTheme: _generalTextTheme(isDarkTheme),
-      accentTextTheme: _generalTextTheme(isDarkTheme),
 
       //affects Icon and IconButton
       iconTheme: IconThemeData(
