@@ -9,9 +9,9 @@ import './material_color_generator/material_color_generator.dart';
 class _Colors {
   ///Private color palette for the light and dark theme
   static final MaterialColor _backgroundSwatch =
-      MaterialColorGenerator.generateMaterialColor(Color(0xff46586a));
+      MaterialColorGenerator.generateMaterialColor(const Color(0xff46586a));
   static final MaterialColor _primarySwatch =
-      MaterialColorGenerator.generateMaterialColor(Color(0xFF467A84));
+      MaterialColorGenerator.generateMaterialColor(const Color(0xFF467A84));
   //dark color palette
   static final Color _darkBackground = _backgroundSwatch.shade800;
   static final Color _darkBackgroundVariant = _backgroundSwatch.shade900;
@@ -23,7 +23,7 @@ class _Colors {
   static final Color _darkContrast =
       MaterialColorGenerator.tintColor(_backgroundSwatch.shade50, 0.3);
   static final Color _darkPrimaryContrast = _darkContrast;
-  static final Color _darkError = Color(0xfff24343);
+  static const Color _darkError = Color(0xfff24343);
   //light color palette
   static final Color _lightBackground =
       MaterialColorGenerator.tintColor(_backgroundSwatch.shade50, 0.9);
@@ -34,8 +34,8 @@ class _Colors {
   static final Color _lightSecondary = _primarySwatch.shade600;
   static final Color _lightSecondaryVariant = _primarySwatch.shade600;
   static final Color _lightContrast = _backgroundSwatch.shade800;
-  static final Color _lightPrimaryContrast = _lightBackground;
-  static final Color _lightError = Color(0xfff24343);
+  static final Color _lightPrimaryContrast = _lightBackgroundVariant;
+  static const Color _lightError = Color(0xfff24343);
 
   ///getters for the different colors
   MaterialColor backgroundSwatch() => _backgroundSwatch;
@@ -67,7 +67,7 @@ class AppTheme {
         color: colors.contrast(isDarkTheme),
       );
 
-  TextTheme _generalTextTheme(bool isDarkTheme) => TextTheme(
+  TextTheme _generalTextTheme(bool isDarkTheme) => const TextTheme(
         headline1: TextStyle(),
         headline2: TextStyle(),
         headline3: TextStyle(),
@@ -129,6 +129,7 @@ class AppTheme {
         titleTextStyle: _generalTextStyle(isDarkTheme),
         foregroundColor: colors.contrast(isDarkTheme),
       ),
+      bottomAppBarColor: colors.backgroundVariant(isDarkTheme),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         unselectedItemColor: colors.contrast(isDarkTheme),
         enableFeedback: true,
@@ -180,7 +181,7 @@ class AppTheme {
             colors.contrast(isDarkTheme).withAlpha(elevatedSelectAlpha),
         secondarySelectedColor:
             colors.secondary(isDarkTheme).withAlpha(elevatedSelectAlpha),
-        padding: EdgeInsets.all(4.0),
+        padding: const EdgeInsets.all(4.0),
         labelStyle: TextStyle(
           color:
               colors.contrast(isDarkTheme).withAlpha(elevatedIconAlpha), // 87%
